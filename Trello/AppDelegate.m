@@ -7,6 +7,12 @@
 
 #import "AppDelegate.h"
 
+@interface WebView (Zoom)
+- (IBAction)zoomPageIn:(id)sender;
+- (IBAction)zoomPageOut:(id)sender;
+- (IBAction)resetPageZoom:(id)sender;
+@end
+
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -14,7 +20,7 @@
     NSURL *url = [NSURL URLWithString:@"https://www.trello.com/login"];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [self.webview.mainFrame loadRequest:urlRequest];
-    [self.webview.mainFrame.frameView.documentView.superview scaleUnitSquareToSize:NSMakeSize(0.8, 0.8)];
+    [self.webview zoomPageOut:nil];
 }
 
 
