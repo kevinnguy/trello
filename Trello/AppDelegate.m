@@ -21,6 +21,7 @@
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [self.webview.mainFrame loadRequest:urlRequest];
     [self.webview zoomPageOut:nil];
+    [self.webview zoomPageOut:nil];
 }
 
 
